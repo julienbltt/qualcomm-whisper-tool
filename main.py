@@ -1,7 +1,7 @@
 from qai_hub_models.models.whisper_base_en.model import WhisperBaseEn
 from qai_hub_models.models._shared.whisper.app import WhisperApp
 
-AUDIO_FILE_PATH = "enregistrement_20250624_145939.wav"
+AUDIO_FILE_PATH = "records/enregistrement_20250624_145939.wav"
 
 def main():
     model = WhisperBaseEn.from_pretrained()
