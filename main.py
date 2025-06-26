@@ -1,4 +1,4 @@
-from whisper import SpeechToTextApplication
+from stt import SpeechToTextApplication
 
 
 AUDIO_DIR_PATH = "records"
