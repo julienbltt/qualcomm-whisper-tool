@@ -1,5 +1,6 @@
 from qai_hub_models.models.whisper_base_en.model import WhisperBaseEn
 from qai_hub_models.models._shared.whisper.app import WhisperApp
+from qai_hub_models.utils.onnx_torch_wrapper import OnnxModelTorchWrapper
 from pathlib import Path
 
 # TODO: Add type hints to the methods and class attributes
@@ -21,8 +22,8 @@ class SpeechToTextApplication:
         """
         self.model = WhisperBaseEn.from_pretrained()
         self.app = WhisperApp(
-            self.model.encoder,
-            self.model.decoder,
+            OnnxModelTorchWrapper.OnNPU("./models/whisper_base_en-whisperencoderinf.onnx"), #self.model.encoder,
+            OnnxModelTorchWrapper.OnNPU("./models/whisper_base_en-whisperdecoderinf.onnx"), #self.model.decoder,
             num_decoder_blocks=self.model.num_decoder_blocks,
             num_decoder_heads=self.model.num_decoder_heads,
             attention_dim=self.model.attention_dim,
