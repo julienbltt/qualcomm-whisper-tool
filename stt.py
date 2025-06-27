@@ -3,10 +3,6 @@ from qai_hub_models.models._shared.whisper.app import WhisperApp
 from qai_hub_models.utils.onnx_torch_wrapper import OnnxModelTorchWrapper
 from pathlib import Path
 
-# TODO: Add type hints to the methods and class attributes
-# TODO: Add docstrings to the methods and class attributes
-# TODO: Add streaming support to the transcribe method
-
 
 class SpeechToTextApplication:
     """
@@ -80,8 +76,3 @@ class SpeechToTextApplication:
         print(f"Transcription result: {transcription}")
         self._delete_audio_file()
         return transcription
-
-        
-        
-
-        
